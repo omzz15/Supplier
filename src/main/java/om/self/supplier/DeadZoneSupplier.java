@@ -1,12 +1,10 @@
 package om.self.supplier;
 
-import static om.self.supplier.Utils.toBigDecimal;
-
-import java.math.BigDecimal;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class DeadZoneSupplier<T extends Number> extends ModifiableSupplier<T> {
-    private Supplier<T> deadZoneSupplier;
+public class DeadZoneSupplier<T extends Comparable<T>> extends ModifiableSupplierImpl<T>{
+    Function<T, T> deadZoneFunction;
     private T deadZoneMin;
     private T deadZoneMax;
 
@@ -17,9 +15,9 @@ public class DeadZoneSupplier<T extends Number> extends ModifiableSupplier<T> {
         super(baseSupplier);
     }
 
-    public DeadZoneSupplier(Supplier<T> baseSupplier, Supplier<T> deadZoneSupplier) {
+    public DeadZoneSupplier(Supplier<T> baseSupplier, Function<T, T> deadZoneFunction) {
         super(baseSupplier);
-        this.deadZoneSupplier = deadZoneSupplier;
+        this.deadZoneFunction = deadZoneFunction;
     }
 
     public DeadZoneSupplier(Supplier<T> baseSupplier, T deadZoneMin, T deadZoneMax) {
@@ -28,9 +26,9 @@ public class DeadZoneSupplier<T extends Number> extends ModifiableSupplier<T> {
         this.deadZoneMax = deadZoneMax;
     }
 
-    public DeadZoneSupplier(Supplier<T> baseSupplier, Supplier<T> deadZoneSupplier, T deadZoneMin, T deadZoneMax) {
+    public DeadZoneSupplier(Supplier<T> baseSupplier, Function<T, T> deadZoneFunction, T deadZoneMin, T deadZoneMax) {
         super(baseSupplier);
-        this.deadZoneSupplier = deadZoneSupplier;
+        this.deadZoneFunction = deadZoneFunction;
         this.deadZoneMin = deadZoneMin;
         this.deadZoneMax = deadZoneMax;
     }
@@ -52,12 +50,8 @@ public class DeadZoneSupplier<T extends Number> extends ModifiableSupplier<T> {
     }
 
     @Override
-    public T modify(T baseInput) {
-        BigDecimal convertedBase = toBigDecimal(baseInput.toString());
-        BigDecimal convertedMin = toBigDecimal(deadZoneMin.toString());
-        BigDecimal convertedMax = toBigDecimal(deadZoneMax.toString());
-
-        if(convertedBase.compareTo(convertedMin) < 0 || convertedBase.compareTo(convertedMax) > 0) return baseInput;
-        return deadZoneSupplier.get();
+    public T apply(T baseInput) {
+        if(baseInput.compareTo(deadZoneMin) < 0 || baseInput.compareTo(deadZoneMax) > 0) return baseInput;
+        return deadZoneFunction.apply(baseInput);
     }
 }

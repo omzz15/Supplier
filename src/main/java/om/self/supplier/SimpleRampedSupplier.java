@@ -1,41 +1,53 @@
 package om.self.supplier;
 
+import java.math.BigDecimal;
 import java.util.function.Supplier;
 
-public class SimpleRampedSupplier<T extends Number> extends ModifiableSupplier<T> {
-    private T ramp;
-    private T currentVal;
+public class SimpleRampedSupplier extends ModifiableSupplierImpl<BigDecimal> {
+    private BigDecimal ramp;
+    private BigDecimal currentVal = new BigDecimal(0);
 
     public SimpleRampedSupplier() {
     }
 
-    public SimpleRampedSupplier(Supplier<T> baseSupplier) {
-        this.baseSupplier = baseSupplier;
+    public SimpleRampedSupplier(Supplier<BigDecimal> baseSupplier){
+        super(baseSupplier);
     }
 
-    public SimpleRampedSupplier(Supplier<T> baseSupplier, T ramp) {
-        this.baseSupplier = baseSupplier;
+    public SimpleRampedSupplier(Supplier<BigDecimal> baseSupplier, BigDecimal ramp) {
+        super(baseSupplier);
         this.ramp = ramp;
     }
 
-    public Supplier<T> getBaseSupplier() {
-        return baseSupplier;
+    public SimpleRampedSupplier(Supplier<BigDecimal> baseSupplier, BigDecimal ramp, BigDecimal currentVal) {
+        super(baseSupplier);
+        this.ramp = ramp;
+        this.currentVal = currentVal;
     }
 
-    public void setBaseSupplier(Supplier<T> baseSupplier) {
-        this.baseSupplier = baseSupplier;
-    }
-
-    public T getRamp() {
+    public BigDecimal getRamp() {
         return ramp;
     }
 
-    public void setRamp(T ramp) {
+    public void setRamp(BigDecimal ramp) {
         this.ramp = ramp;
     }
 
+    public BigDecimal getCurrentVal() {
+        return currentVal;
+    }
+
+    public void setCurrentVal(BigDecimal currentVal) {
+        this.currentVal = currentVal;
+    }
+
     @Override
-    public T modify(T baseInput) {
-        return baseSupplier.get();
+    public BigDecimal apply(BigDecimal baseInput) {
+        int compare = currentVal.compareTo(baseInput);
+
+        if(compare < 0) currentVal = baseInput.min(currentVal.add(ramp));
+        if(compare > 0) currentVal = baseInput.max(currentVal.subtract(ramp));
+
+        return currentVal;
     }
 }

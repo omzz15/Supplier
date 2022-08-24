@@ -3,7 +3,7 @@ package om.self.supplier;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class ConditionalSupplier<T> extends ModifiableSupplier<T>{
+public class ConditionalSupplier<T> extends ModifiableSupplierImpl<T> {
     Supplier<Boolean> condition;
     Function<T, T> modification;
 
@@ -37,7 +37,7 @@ public class ConditionalSupplier<T> extends ModifiableSupplier<T>{
     }
 
     @Override
-    public T modify(T baseInput) {
+    public T apply(T baseInput) {
         return condition.get() ? modification.apply(baseInput) : baseInput;
     }
 }
