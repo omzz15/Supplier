@@ -1,36 +1,39 @@
-package om.self.supplier;
+package om.self.supplier.modifiers;
+
+import om.self.supplier.Suppliable;
 
 import java.util.function.Function;
-import java.util.function.Supplier;
 
-public class DeadZoneSupplier<T extends Comparable<T>> extends ModifiableSupplierImpl<T>{
+
+public class DeadZoneModifier<T extends Comparable<T>> implements Suppliable<T> {
     Function<T, T> deadZoneFunction;
     private T deadZoneMin;
     private T deadZoneMax;
 
-    public DeadZoneSupplier() {
+    public DeadZoneModifier() {
     }
 
-    public DeadZoneSupplier(Supplier<T> baseSupplier) {
-        super(baseSupplier);
-    }
-
-    public DeadZoneSupplier(Supplier<T> baseSupplier, Function<T, T> deadZoneFunction) {
-        super(baseSupplier);
+    public DeadZoneModifier(Function<T, T> deadZoneFunction) {
         this.deadZoneFunction = deadZoneFunction;
     }
 
-    public DeadZoneSupplier(Supplier<T> baseSupplier, T deadZoneMin, T deadZoneMax) {
-        super(baseSupplier);
+    public DeadZoneModifier(T deadZoneMin, T deadZoneMax) {
         this.deadZoneMin = deadZoneMin;
         this.deadZoneMax = deadZoneMax;
     }
 
-    public DeadZoneSupplier(Supplier<T> baseSupplier, Function<T, T> deadZoneFunction, T deadZoneMin, T deadZoneMax) {
-        super(baseSupplier);
+    public DeadZoneModifier(Function<T, T> deadZoneFunction, T deadZoneMin, T deadZoneMax) {
         this.deadZoneFunction = deadZoneFunction;
         this.deadZoneMin = deadZoneMin;
         this.deadZoneMax = deadZoneMax;
+    }
+
+    public Function<T, T> getDeadZoneFunction() {
+        return deadZoneFunction;
+    }
+
+    public void setDeadZoneFunction(Function<T, T> deadZoneFunction) {
+        this.deadZoneFunction = deadZoneFunction;
     }
 
     public T getDeadZoneMin() {
@@ -47,6 +50,11 @@ public class DeadZoneSupplier<T extends Comparable<T>> extends ModifiableSupplie
 
     public void setDeadZoneMax(T deadZoneMax) {
         this.deadZoneMax = deadZoneMax;
+    }
+
+    public void setDeadZones(T deadZoneMin, T deadZoneMax){
+        this.deadZoneMin=deadZoneMin;
+        this.deadZoneMax=deadZoneMax;
     }
 
     @Override

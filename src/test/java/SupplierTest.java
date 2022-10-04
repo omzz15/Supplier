@@ -1,20 +1,34 @@
-import om.self.supplier.*;
-
-import java.math.BigDecimal;
+import om.self.supplier.ModifierStack;
+import om.self.supplier.modifiers.LatchedModifier;
 
 public class SupplierTest {
     public static void main(String[] args) {
-        SimpleRampedSupplier layer1 = new TimeRampedSupplier(null, Utils.toBigDecimal(1), Utils.toBigDecimal(0.0));
-        DeadZoneSupplier<Double> layer2 = new DeadZoneSupplier(null, val -> 0.0, 0.0, 0.0);
-        SupplierStack<Double> stack = new SupplierStack<>(() -> 100.0, (num) -> layer1.apply(Utils.toBigDecimal(num)).doubleValue(), layer2);
+        LatchedModifier l = new LatchedModifier();
 
-        double val = stack.get();
+        for (int i = 0; i < 100; i++) {
+            boolean val = Math.random() < 0.5;
+            l.apply(val);
 
-        while (val < 100){
-            if((int)val == 90)
-                layer1.setCurrentVal(Utils.toBigDecimal(99));
-            System.out.println(val);
-            val = stack.get();
+            System.out.println("raw: " + val + " , latched: " + l.getLatchValue());
         }
+
+//        DeadZoneModifier<Double> layer2 = new DeadZoneModifier<>(val -> 0.0, 0.0, 0.0);
+//        Logger<Double> layer3 = new Logger<>();
+//
+//        EdgeModifier e = new EdgeModifier();
+//        Stack l4 = new Stack((in) -> ((Number)in).intValue() > 50, e);
+//
+//
+//        Supplier<Double> stack = new ModifierStack(layer1, layer2, layer3, layer4).toSupplier(() -> 100.0);
+//
+//        double val = stack.get();
+//
+//        while (val < 100){
+//            val = stack.get();
+//            if(e.isRisingEdge())
+//                System.out.println("rising edge at " + val);
+//        }
+
+        //System.out.println(layer3.getLog());
     }
 }

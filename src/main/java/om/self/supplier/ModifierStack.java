@@ -5,24 +5,19 @@ import java.util.LinkedList;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class SupplierStack<T> extends ModifiableSupplierImpl<T> {
+public class ModifierStack<T> implements Suppliable<T> {
     private LinkedList<Function<T, T>> stack = new LinkedList<>();
 
-    public SupplierStack() {
+    public ModifierStack() {
     }
 
-    public SupplierStack(Supplier<T> baseSupplier) {
-        super(baseSupplier);
-    }
-
-    public SupplierStack(Supplier<T> baseSupplier, LinkedList<Function<T, T>> stack) {
-        super(baseSupplier);
+    public ModifierStack(LinkedList<Function<T, T>> stack) {
         this.stack = stack;
     }
 
-    public SupplierStack(Supplier<T> baseSupplier, Function<T, T>... stackFunctions) {
-        super(baseSupplier);
-        this.stack.addAll(Arrays.asList(stackFunctions));
+    @SafeVarargs
+    public ModifierStack(Function<T, T>... functions) {
+        addToStack(functions);
     }
 
     public LinkedList<Function<T, T>> getStack() {
@@ -31,6 +26,14 @@ public class SupplierStack<T> extends ModifiableSupplierImpl<T> {
 
     public void setStack(LinkedList<Function<T, T>> stack) {
         this.stack = stack;
+    }
+
+    public void addToStack(Function<T, T> function) {
+        stack.add(function);
+    }
+
+    public void addToStack(Function<T, T>... functions) {
+        stack.addAll(Arrays.asList(functions));
     }
 
     @Override

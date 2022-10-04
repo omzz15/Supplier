@@ -4,17 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e398fb88-9332-447c-a1b8-37e70418a5b6" name="Changes" comment="">
+    <list default="true" id="e398fb88-9332-447c-a1b8-37e70418a5b6" name="Changes" comment="base code">
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/Suppliable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/EdgeExModifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/EdgeModifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/LatchedModifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/SimpleRampedModifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/TimeRampedModifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/suppliers/EdgeSupplier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/suppliers/LinkedSupplier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/ConditionalSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/ConditionalSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/DeadZoneSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/DeadZoneSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/ModifiableSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/ModifiableSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/ModifiableSupplierImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/ModifiableSupplierImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/SimpleRampedSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/SimpleRampedSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/SupplierStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/SupplierStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/TimeRampedSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/TimeRampedSupplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/ConditionalSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/ConditionalModifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/DeadZoneSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/DeadZoneModifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/ModifiableSupplier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/ModifiableSupplierImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/SimpleRampedSupplier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/SupplierStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/ModifierStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/TimeRampedSupplier.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/SupplierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SupplierTest.java" afterDir="false" />
     </list>
@@ -37,6 +47,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="2DjRHnaybEksnKnE2DWagSfpoZz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -48,11 +61,21 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Development/Plaforms/Java/Library/Task&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="om.self.supplier.modifiers" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="SupplierTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SupplierTest" />
@@ -76,6 +99,14 @@
       <option name="presentableId" value="Default" />
       <updated>1661210425762</updated>
     </task>
+    <task id="LOCAL-00001" summary="base code">
+      <created>1661305020646</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661305020646</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -89,15 +120,8 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/SupplierTest.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="base code" />
+    <option name="LAST_COMMIT_MESSAGE" value="base code" />
   </component>
 </project>

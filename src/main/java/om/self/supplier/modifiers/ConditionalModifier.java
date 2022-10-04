@@ -1,21 +1,18 @@
-package om.self.supplier;
+package om.self.supplier.modifiers;
+
+import om.self.supplier.Suppliable;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class ConditionalSupplier<T> extends ModifiableSupplierImpl<T> {
+public class ConditionalModifier<T> implements Suppliable<T> {
     Supplier<Boolean> condition;
     Function<T, T> modification;
 
-    public ConditionalSupplier() {
+    public ConditionalModifier() {
     }
 
-    public ConditionalSupplier(Supplier<T> baseSupplier) {
-        super(baseSupplier);
-    }
-
-    public ConditionalSupplier(Supplier<T> baseSupplier, Supplier<Boolean> condition, Function<T, T> modification) {
-        super(baseSupplier);
+    public ConditionalModifier(Supplier<Boolean> condition, Function<T, T> modification) {
         this.condition = condition;
         this.modification = modification;
     }
