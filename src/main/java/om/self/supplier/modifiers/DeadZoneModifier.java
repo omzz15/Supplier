@@ -9,6 +9,7 @@ public class DeadZoneModifier<T extends Comparable<T>> implements Suppliable<T> 
     Function<T, T> deadZoneFunction;
     private T deadZoneMin;
     private T deadZoneMax;
+    private boolean inDeadZone = false;
 
     public DeadZoneModifier() {
     }
@@ -57,9 +58,15 @@ public class DeadZoneModifier<T extends Comparable<T>> implements Suppliable<T> 
         this.deadZoneMax=deadZoneMax;
     }
 
+    public boolean isInDeadZone() {
+        return inDeadZone;
+    }
+
     @Override
     public T apply(T baseInput) {
-        if(baseInput.compareTo(deadZoneMin) < 0 || baseInput.compareTo(deadZoneMax) > 0) return baseInput;
-        return deadZoneFunction.apply(baseInput);
+        inDeadZone = baseInput.compareTo(deadZoneMin) < 0 || baseInput.compareTo(deadZoneMax) > 0;
+
+        if(inDeadZone) return deadZoneFunction.apply(baseInput);
+        return baseInput;
     }
 }

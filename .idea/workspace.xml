@@ -4,28 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e398fb88-9332-447c-a1b8-37e70418a5b6" name="Changes" comment="base code">
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/Logger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/Suppliable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/EdgeExModifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/EdgeModifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/LatchedModifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/SimpleRampedModifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/TimeRampedModifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/suppliers/EdgeSupplier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/suppliers/LinkedSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e398fb88-9332-447c-a1b8-37e70418a5b6" name="Changes" comment="added so many functions">
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/CapModifier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/ConditionalSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/ConditionalModifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/DeadZoneSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/DeadZoneModifier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/ModifiableSupplier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/ModifiableSupplierImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/SimpleRampedSupplier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/SupplierStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/ModifierStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/TimeRampedSupplier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/DeadZoneModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/DeadZoneModifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/SimpleRampedModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/SimpleRampedModifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/TimeRampedModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/TimeRampedModifier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/SupplierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SupplierTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661305020646</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added so many functions">
+      <created>1664925104751</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664925104751</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,6 +113,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="base code" />
-    <option name="LAST_COMMIT_MESSAGE" value="base code" />
+    <MESSAGE value="added so many functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="added so many functions" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="(end - start) / 1000000." language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

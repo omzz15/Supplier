@@ -1,15 +1,38 @@
 import om.self.supplier.ModifierStack;
+import om.self.supplier.modifiers.CapModifier;
 import om.self.supplier.modifiers.LatchedModifier;
+import om.self.supplier.modifiers.TimeRampedModifier;
 
 public class SupplierTest {
     public static void main(String[] args) {
-        LatchedModifier l = new LatchedModifier();
+        TimeRampedModifier t = new TimeRampedModifier(.001, 0);
+        CapModifier<Double> c = new CapModifier<>(-1.,0.);
 
-        for (int i = 0; i < 100; i++) {
-            boolean val = Math.random() < 0.5;
-            l.apply(val);
+        double startTime = .01;
+        double endTime = 1;
+        double step = 0.01;
+        int trials = 100;
+        //double[] errors = new double[endTime - startTime + 1];
+        boolean printAsData = true;
 
-            System.out.println("raw: " + val + " , latched: " + l.getLatchValue());
+        for (double time = startTime; time <= endTime; time+= step) {
+            c.setMaxCap(t.getRampPerMs() * time);
+            double error = 0;
+
+            for (int i = 0; i < trials; i++) {
+                t.setCurrentVal(0);
+                c.apply(0.0);
+                long start = System.nanoTime();
+                while (c.isInRange()) c.apply(t.apply(Double.MAX_VALUE));
+
+                error += (System.nanoTime() - start) - time * 1000000.;
+            }
+
+            error /= trials;
+            //errors[time - startTime] = error;
+
+            if(printAsData) System.out.println(time + ", " + error);
+            else System.out.println("Error at time " + time +" ms is: " + error + " ns");
         }
 
 //        DeadZoneModifier<Double> layer2 = new DeadZoneModifier<>(val -> 0.0, 0.0, 0.0);

@@ -3,52 +3,42 @@ package om.self.supplier.modifiers;
 import om.self.supplier.Suppliable;
 import om.self.supplier.Utils;
 
-public class SimpleRampedModifier<T extends Number> implements Suppliable<T> {
-    private T ramp;
-    private T currentVal;
+public class SimpleRampedModifier implements Suppliable<Double> {
+    private double ramp;
+    private double currentVal;
 
     public SimpleRampedModifier() {
     }
 
-    public SimpleRampedModifier(T ramp) {
+    public SimpleRampedModifier(double ramp) {
         this.ramp = ramp;
     }
 
-    public SimpleRampedModifier(T ramp, T currentVal) {
+    public SimpleRampedModifier(double ramp, double currentVal) {
         this.ramp = ramp;
         this.currentVal = currentVal;
     }
 
-    public T getRamp() {
+    public double getRamp() {
         return ramp;
     }
 
-    public void setRamp(T ramp) {
+    public void setRamp(double ramp) {
         this.ramp = ramp;
     }
 
-    public T getCurrentVal() {
+    public double getCurrentVal() {
         return currentVal;
     }
 
-    public void setCurrentVal(T currentVal) {
+    public void setCurrentVal(double currentVal) {
         this.currentVal = currentVal;
     }
 
-    public void clear(){
-        currentVal = null;
-    }
-
     @Override
-    public T apply(T baseInput) {
-        if(currentVal == null) currentVal = baseInput;
-
-        double input = baseInput.doubleValue();
-        double curr = currentVal.doubleValue();
-        double ramp = this.ramp.doubleValue();
-
-        if(input > curr) currentVal = Utils.convertNumber(Math.min(input, curr + ramp), currentVal);
-        else if(input < curr) currentVal = Utils.convertNumber(Math.max(input, curr - ramp), currentVal);
+    public Double apply(Double baseInput) {
+        if(currentVal < baseInput) currentVal = Math.min(baseInput, currentVal + ramp);
+        else if(currentVal > baseInput) currentVal = Math.max(baseInput, currentVal - ramp);
 
         return currentVal;
     }
