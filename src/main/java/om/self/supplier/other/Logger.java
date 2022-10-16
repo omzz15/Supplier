@@ -1,4 +1,4 @@
-package om.self.supplier;
+package om.self.supplier.other;
 
 import java.util.LinkedList;
 import java.util.function.Function;

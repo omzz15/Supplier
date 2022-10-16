@@ -1,19 +1,21 @@
 package om.self.supplier.modifiers;
 
-import om.self.supplier.Suppliable;
+import om.self.supplier.core.Modifier;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class ConditionalModifier<T> implements Suppliable<T> {
+public class ConditionalModifier<T, R> implements Modifier<T, R> {
     Supplier<Boolean> condition;
-    Function<T, T> modification;
+    Function<T, R> modification;
+    Function<T, R> base;
 
     public ConditionalModifier() {
     }
 
-    public ConditionalModifier(Supplier<Boolean> condition, Function<T, T> modification) {
+    public ConditionalModifier(Supplier<Boolean> condition, Function<T,R> base, Function<T, R> modification) {
         this.condition = condition;
+        this.base = base;
         this.modification = modification;
     }
 
@@ -25,16 +27,24 @@ public class ConditionalModifier<T> implements Suppliable<T> {
         this.condition = condition;
     }
 
-    public Function<T, T> getModification() {
+    public Function<T, R> getModification() {
         return modification;
     }
 
-    public void setModification(Function<T, T> modification) {
+    public void setModification(Function<T, R> modification) {
         this.modification = modification;
     }
 
+    public Function<T, R> getBase() {
+        return base;
+    }
+
+    public void setBase(Function<T, R> base) {
+        this.base = base;
+    }
+
     @Override
-    public T apply(T baseInput) {
-        return condition.get() ? modification.apply(baseInput) : baseInput;
+    public R apply(T baseInput) {
+        return condition.get() ? modification.apply(baseInput) : base.apply(baseInput);
     }
 }

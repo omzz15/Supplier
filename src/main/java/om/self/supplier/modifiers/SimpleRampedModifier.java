@@ -1,9 +1,8 @@
 package om.self.supplier.modifiers;
 
-import om.self.supplier.Suppliable;
-import om.self.supplier.Utils;
+import om.self.supplier.core.SingleTypeModifier;
 
-public class SimpleRampedModifier implements Suppliable<Double> {
+public class SimpleRampedModifier implements SingleTypeModifier<Double> {
     private double ramp;
     private double currentVal;
 

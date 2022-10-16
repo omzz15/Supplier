@@ -1,11 +1,11 @@
 package om.self.supplier.modifiers;
 
-import om.self.supplier.Suppliable;
+import om.self.supplier.core.SingleTypeModifier;
 
 import java.util.function.Function;
 
 
-public class DeadZoneModifier<T extends Comparable<T>> implements Suppliable<T> {
+public class DeadZoneModifier<T extends Comparable<T>> implements SingleTypeModifier<T> {
     Function<T, T> deadZoneFunction;
     private T deadZoneMin;
     private T deadZoneMax;

@@ -1,9 +1,8 @@
 package om.self.supplier.modifiers;
 
-import om.self.supplier.Suppliable;
-import java.util.function.Supplier;
+import om.self.supplier.core.SingleTypeModifier;
 
-public class EdgeModifier implements Suppliable<Boolean> {
+public class EdgeModifier implements SingleTypeModifier<Boolean> {
     private boolean currVal;
     private boolean lastVal;
 

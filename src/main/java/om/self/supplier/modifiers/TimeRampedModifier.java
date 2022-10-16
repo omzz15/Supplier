@@ -1,7 +1,5 @@
 package om.self.supplier.modifiers;
 
-import om.self.supplier.Utils;
-
 public class TimeRampedModifier extends SimpleRampedModifier {
     private double rampPerMs;
     private long lastUpdateTime = System.nanoTime();

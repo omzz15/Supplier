@@ -4,10 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e398fb88-9332-447c-a1b8-37e70418a5b6" name="Changes" comment="added so many functions">
-      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/CapModifier.java" afterDir="false" />
+    <list default="true" id="e398fb88-9332-447c-a1b8-37e70418a5b6" name="Changes" comment="made time ramped modifier more precise and added cap modifier">
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/core/Modifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/core/ModifierImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/core/SingleTypeModifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/core/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/NumberConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/SingleTypeConditionalModifier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/other/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/ModifierStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/ModifierStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/Suppliable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/CapModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/CapModifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/ConditionalModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/ConditionalModifier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/DeadZoneModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/DeadZoneModifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/EdgeExModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/EdgeExModifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/EdgeModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/EdgeModifier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/SimpleRampedModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/SimpleRampedModifier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/TimeRampedModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/TimeRampedModifier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/SupplierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SupplierTest.java" afterDir="false" />
@@ -51,7 +65,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
@@ -97,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664925104751</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="made time ramped modifier more precise and added cap modifier">
+      <created>1665433835804</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665433835804</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,7 +135,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="base code" />
     <MESSAGE value="added so many functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="added so many functions" />
+    <MESSAGE value="made time ramped modifier more precise and added cap modifier" />
+    <option name="LAST_COMMIT_MESSAGE" value="made time ramped modifier more precise and added cap modifier" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

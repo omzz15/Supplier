@@ -1,11 +1,12 @@
-package om.self.supplier;
+package om.self.supplier.modifiers;
+
+import om.self.supplier.core.SingleTypeModifier;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.function.Function;
-import java.util.function.Supplier;
 
-public class ModifierStack<T> implements Suppliable<T> {
+public class ModifierStack<T> implements SingleTypeModifier<T> {
     private LinkedList<Function<T, T>> stack = new LinkedList<>();
 
     public ModifierStack() {
