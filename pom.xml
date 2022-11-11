@@ -6,7 +6,7 @@
 
     <groupId>io.github.omzz15</groupId>
     <artifactId>supplier</artifactId>
-    <version>1.2.3-RELEASE</version>
+    <version>1.0.0-FTCRELEASE</version>
 
     <build>
         <plugins>
@@ -17,6 +17,7 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+                <version>3.10.1</version>
             </plugin>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>

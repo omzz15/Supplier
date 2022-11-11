@@ -6,9 +6,9 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class ConditionalModifier<T, R> implements Modifier<T, R> {
-    Supplier<Boolean> condition;
-    Function<T, R> modification;
-    Function<T, R> base;
+    private Supplier<Boolean> condition;
+    private Function<T, R> modification;
+    private Function<T, R> base;
 
     public ConditionalModifier() {
     }

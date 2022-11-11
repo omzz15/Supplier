@@ -37,6 +37,14 @@ public class ModifierStack<T> implements SingleTypeModifier<T> {
         stack.addAll(Arrays.asList(functions));
     }
 
+    public void removeFromStack(int location){
+        stack.remove(location);
+    }
+
+    public void removeFromStack(Function<T, T> function){
+        stack.remove(function);
+    }
+
     @Override
     public T apply(T baseInput) {
         for (Function<T, T> func : stack) {

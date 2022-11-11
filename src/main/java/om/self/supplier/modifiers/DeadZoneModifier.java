@@ -6,7 +6,7 @@ import java.util.function.Function;
 
 
 public class DeadZoneModifier<T extends Comparable<T>> implements SingleTypeModifier<T> {
-    Function<T, T> deadZoneFunction;
+    private Function<T, T> deadZoneFunction;
     private T deadZoneMin;
     private T deadZoneMax;
     private boolean inDeadZone = false;
