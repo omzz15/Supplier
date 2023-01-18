@@ -2,7 +2,8 @@ package om.self.supplier.suppliers;
 
 import java.util.function.Supplier;
 
-public class LatchedSupplier extends EdgeSupplier {
+public class LatchedSupplier implements Supplier<Boolean> {
+    public final EdgeSupplier edge = new EdgeSupplier();
     private boolean latchValue = false;
 
     public LatchedSupplier() {
@@ -14,7 +15,7 @@ public class LatchedSupplier extends EdgeSupplier {
 
     public LatchedSupplier(Supplier<Boolean> baseSupplier, boolean latchValue){
         this.latchValue = latchValue;
-        this.setBase(baseSupplier);
+        edge.setBase(baseSupplier);
     }
 
     public boolean getLatchValue() {
@@ -26,7 +27,7 @@ public class LatchedSupplier extends EdgeSupplier {
     }
 
     public Boolean get() {
-        if(isFallingEdge()) latchValue = !latchValue;
+        if(edge.isRisingEdge()) latchValue = !latchValue;
         return latchValue;
     }
 }

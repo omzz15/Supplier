@@ -1,16 +1,20 @@
 import om.self.supplier.core.Utils;
 import om.self.supplier.modifiers.NumberConverter;
 import om.self.supplier.modifiers.SimpleRampedModifier;
+import om.self.supplier.suppliers.EdgeSupplier;
+import om.self.supplier.suppliers.LatchedSupplier;
 
 import java.util.function.Supplier;
 
 public class SupplierTest {
     public static void main(String[] args) {
-        Supplier<Integer> iSup = new NumberConverter<>(Double.class, Integer.class).toSupplier(new SimpleRampedModifier(0.5).toSupplier(() -> 10000000.));
+//        Supplier<Integer> iSup = new NumberConverter<>(Double.class, Integer.class).toSupplier(new SimpleRampedModifier(0.5).toSupplier(() -> 10000000.));
+//
+//        for (int i = 0; i < 100; i++) {
+//            System.out.println(iSup.get());
+//        }
 
-        for (int i = 0; i < 100; i++) {
-            System.out.println(iSup.get());
-        }
+
 //        TimeRampedModifier t = new TimeRampedModifier(.001, 0);
 //        CapModifier<Double> c = new CapModifier<>(-1.,0.);
 //
@@ -59,5 +63,18 @@ public class SupplierTest {
 //        }
 
         //System.out.println(layer3.getLog());
+
+
+        LatchedSupplier sup = new LatchedSupplier(true);
+        sup.edge.setBase(() -> {
+            boolean b = Math.random() > 0.7;
+            System.out.println(b ? "+" : "-");
+            return b;
+        });
+
+        for (int i = 0; i < 1000; i++) {
+            System.out.println("sup: " + (sup.get() ? "+" : "-"));
+        }
+
     }
 }

@@ -6,6 +6,13 @@ public class EdgeSupplier implements Supplier<Boolean> {
     private Supplier<Boolean> base;
     private boolean lastVal;
 
+    public EdgeSupplier(Supplier<Boolean> base) {
+        this.base = base;
+    }
+
+    public EdgeSupplier() {
+    }
+
     public Supplier<Boolean> getBase() {
         return base;
     }
@@ -21,10 +28,21 @@ public class EdgeSupplier implements Supplier<Boolean> {
     }
 
     public boolean isRisingEdge(){
-        return !lastVal && get();
+        boolean lastVal = this.lastVal;
+        get();
+        return !lastVal && this.lastVal;
     }
 
     public boolean isFallingEdge(){
-        return lastVal && !get();
+        boolean lastVal = this.lastVal;
+        get();
+        return lastVal && !this.lastVal;
+    }
+
+    public Supplier<Boolean> getRisingEdgeSupplier(){
+        return this::isRisingEdge;
+    }
+    public Supplier<Boolean> getFallingEdgeSupplier(){
+        return this::isFallingEdge;
     }
 }
