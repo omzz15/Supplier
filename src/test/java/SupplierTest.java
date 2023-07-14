@@ -1,8 +1,10 @@
 import om.self.supplier.core.Utils;
+import om.self.supplier.modifiers.LatchedModifier;
 import om.self.supplier.modifiers.NumberConverter;
 import om.self.supplier.modifiers.SimpleRampedModifier;
 import om.self.supplier.suppliers.EdgeSupplier;
 import om.self.supplier.suppliers.LatchedSupplier;
+import om.self.supplier.suppliers.RisingLatchedSupplier;
 
 import java.util.function.Supplier;
 
@@ -65,8 +67,7 @@ public class SupplierTest {
         //System.out.println(layer3.getLog());
 
 
-        LatchedSupplier sup = new LatchedSupplier(true);
-        sup.edge.setBase(() -> {
+        Supplier<Boolean> sup = new LatchedModifier().toSupplier(() -> {
             boolean b = Math.random() > 0.7;
             System.out.println(b ? "+" : "-");
             return b;

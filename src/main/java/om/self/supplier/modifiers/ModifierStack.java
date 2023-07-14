@@ -41,8 +41,8 @@ public class ModifierStack<T> implements SingleTypeModifier<T> {
         stack.remove(location);
     }
 
-    public void removeFromStack(Function<T, T> function){
-        stack.remove(function);
+    public boolean removeFromStack(Function<T,T> function){
+        return stack.remove(function);
     }
 
     @Override

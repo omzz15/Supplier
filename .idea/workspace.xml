@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e398fb88-9332-447c-a1b8-37e70418a5b6" name="Changes" comment="added consumer">
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/suppliers/FallingLatchedSupplier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/suppliers/RisingLatchedSupplier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/suppliers/EdgeSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/suppliers/EdgeSupplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/EdgeExModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/EdgeExModifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/LatchedModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/LatchedModifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/ModifierStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/modifiers/ModifierStack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/om/self/supplier/suppliers/LatchedSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/om/self/supplier/suppliers/LatchedSupplier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/SupplierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SupplierTest.java" afterDir="false" />
     </list>
@@ -64,6 +68,7 @@
       <recent name="C:\Development\Plaforms\Java\Library\Supplier\src\main\java\om\self\supplier\suppliers" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="om.self.supplier.suppliers" />
       <recent name="om.self.supplier.modifiers" />
     </key>
   </component>

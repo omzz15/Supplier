@@ -2,10 +2,7 @@ package om.self.supplier.modifiers;
 
 import om.self.supplier.core.SingleTypeModifier;
 
-public class EdgeExModifier implements SingleTypeModifier<Boolean> {
-    private boolean currVal;
-    private boolean lastVal;
-
+public class EdgeExModifier extends EdgeModifier {
     private Runnable onRise = () -> {};
 
     private Runnable onFall = () -> {};
@@ -37,20 +34,11 @@ public class EdgeExModifier implements SingleTypeModifier<Boolean> {
 
     @Override
     public Boolean apply(Boolean value) {
-        lastVal = currVal;
-        currVal = value;
+        super.apply(value);
 
         if(isRisingEdge()) onRise.run();
         else if(isFallingEdge()) onFall.run();
 
         return value;
-    }
-
-    public boolean isRisingEdge(){
-        return !lastVal && currVal;
-    }
-
-    public boolean isFallingEdge(){
-        return lastVal && !currVal;
     }
 }
