@@ -2,6 +2,10 @@ package om.self.supplier.suppliers;
 
 import java.util.function.Supplier;
 
+/**
+ * @deprecated use {@link om.self.supplier.modifiers.EdgeModifier} with the toSupplier() method
+ */
+@Deprecated
 public class EdgeSupplier implements Supplier<Boolean> {
     private Supplier<Boolean> base;
     private boolean lastVal;

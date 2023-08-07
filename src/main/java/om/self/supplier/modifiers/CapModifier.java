@@ -49,6 +49,10 @@ public class CapModifier <T extends Comparable<T>> implements SingleTypeModifier
         return minCap;
     }
 
+    /**
+     * sets the minCap
+     * @param minCap the minimum value(inclusive) that can be returned
+     */
     public void setMinCap(T minCap) {
         this.minCap = minCap;
     }
@@ -61,6 +65,10 @@ public class CapModifier <T extends Comparable<T>> implements SingleTypeModifier
         return maxCap;
     }
 
+    /**
+     * sets the maxCap
+     * @param maxCap the maximum value(inclusive) that can be returned
+     */
     public void setMaxCap(T maxCap) {
         this.maxCap = maxCap;
     }
@@ -99,6 +107,11 @@ public class CapModifier <T extends Comparable<T>> implements SingleTypeModifier
         return aboveRange;
     }
 
+    /**
+     * returns the baseInput if it is within the specified range, else it returns the closest value to the specified range.
+     * @param baseInput the input to be capped
+     * @return the capped value
+     */
     @Override
     public T apply(T baseInput) {
         belowRange = baseInput.compareTo(minCap) < 0;

@@ -2,10 +2,10 @@ package om.self.supplier.suppliers;
 
 import java.util.function.Supplier;
 
-@Deprecated
 /**
  * @deprecated use {@link om.self.supplier.modifiers.LatchedModifier} with the toSupplier() method
  */
+@Deprecated
 abstract public class LatchedSupplier implements Supplier<Boolean> {
     protected final EdgeSupplier edge = new EdgeSupplier();
     protected boolean latchValue = false;

@@ -8,6 +8,8 @@ import java.util.function.Supplier;
 /**
  * use this instead of {@link ConditionalModifier} if the return and input types are the same because it runs faster.
  * @param <T> the type of the input and output
+ *
+ * @see ConditionalModifier
  */
 public class SingleTypeConditionalModifier<T> implements SingleTypeModifier<T> {
     Supplier<Boolean> condition;

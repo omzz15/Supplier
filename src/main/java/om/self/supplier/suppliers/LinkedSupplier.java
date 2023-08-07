@@ -3,6 +3,12 @@ package om.self.supplier.suppliers;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+/**
+ * @deprecated use {@link om.self.supplier.modifiers.ModifierStack} with the toSupplier() method
+ * @param <T>
+ * @param <R>
+ */
+@Deprecated
 public class LinkedSupplier<T, R> implements Supplier<R> {
     T input;
     Function<T, R> conversionFunction;
