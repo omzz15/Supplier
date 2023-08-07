@@ -62,16 +62,16 @@ public class LatchedModifier extends EdgeExModifier{
      */
     public void setLatchType(LatchType type){
         switch (type) {
-            case RISING_EDGE -> {
+            case RISING_EDGE:
                 setOnFall(() -> {
                 });
                 setOnRise(this::invertLatchValue);
-            }
-            case FALLING_EDGE -> {
+                break;
+            case FALLING_EDGE:
                 setOnRise(() -> {
                 });
                 setOnFall(this::invertLatchValue);
-            }
+                break;
         }
     }
 
