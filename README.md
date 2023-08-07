@@ -34,9 +34,9 @@ There are multiple ways to use this library, but it was primarily made for Maven
 4. Enjoy :)
 
 ## To Install with Maven:
-**FTC does not use maven so follow the installation with gradle instructions if you are using FTC**
+**FTC does not use maven, so follow the installation with gradle instructions if you are using FTC**
 1. In your project, make sure you can get libraries from Maven Central(This should be automatically available in maven projects)
-2. Add the library to the project(by default it should be in the dependencies section of pom.xml)
+2. Add the library to the project(by default, it should be in the dependencies section of pom.xml)
    ```
    <dependency>
       <groupId>io.github.omzz15</groupId>
