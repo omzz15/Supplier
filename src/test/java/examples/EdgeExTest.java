@@ -2,6 +2,9 @@ package examples;
 
 import om.self.supplier.modifiers.EdgeExModifier;
 
+/**
+ * A simple example of using the {@link EdgeExModifier}
+ */
 public class EdgeExTest {
     public static void main(String[] args) {
         EdgeExModifier detector = new EdgeExModifier(() -> System.out.print("Rising"), () -> System.out.print("Falling"));

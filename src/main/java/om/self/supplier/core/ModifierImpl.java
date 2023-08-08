@@ -15,8 +15,8 @@ public class ModifierImpl<T, R> implements Modifier<T, R>{
     private Function<T, R> function;
 
     /**
-     * A default no args constructor.
-     * @implNote IMPORTANT: you must set the function before using this modifier else it will throw a {@link NullPointerException}.
+     * A default no args constructor. <br>
+     * IMPORTANT: you must set the function before using this modifier else it will throw a {@link NullPointerException}.
      * @see ModifierImpl#setFunction(Function)
      */
     public ModifierImpl() {
@@ -41,9 +41,10 @@ public class ModifierImpl<T, R> implements Modifier<T, R>{
     /**
      * sets the function
      * @param function the function you want this modifier to run.
-     * @implNote please do not use null because it will throw a {@link NullPointerException} when function is used
+     * @throws NullPointerException if function is null
      */
     public void setFunction(Function<T, R> function) {
+        if(function == null) throw new NullPointerException("function cannot be null");
         this.function = function;
     }
 

@@ -25,8 +25,8 @@ public class CapModifier <T extends Comparable<T>> implements SingleTypeModifier
     private boolean aboveRange = false;
 
     /**
-     * A default no args constructor.
-     * @implNote IMPORTANT: you must set the min and max cap before using this modifier else it will throw a {@link NullPointerException}.
+     * A default no args constructor. <br>
+     * IMPORTANT: you must set the min and max cap before using this modifier else it will throw a {@link NullPointerException}.
      * @see CapModifier#setCaps(Comparable, Comparable)
      */
     public CapModifier() {}

@@ -24,29 +24,31 @@ public class DeadZoneModifier<T extends Comparable<T>> implements SingleTypeModi
     private boolean inDeadZone = false;
 
     /**
-     * Default constructor
+     * Default constructor <br>
+     * IMPORTANT: you MUST set the dead zone function and dead zone min and max before using this modifier
+     *
      * @see #DeadZoneModifier(Function)
      * @see #DeadZoneModifier(T, T)
      *
-     * @apiNote you MUST set the dead zone function and dead zone min and max before using this modifier
      */
     public DeadZoneModifier() {
     }
 
     /**
-     * Constructor that sets the dead zone function
+     * Constructor that sets the dead zone function <br>
+     * IMPORTANT: you MUST set the dead zone min and max before using this modifier
      * @param deadZoneFunction the function that is applied to the input if it is inside the dead zone
-     * @apiNote you MUST set the dead zone min and max before using this modifier
      */
     public DeadZoneModifier(Function<T, T> deadZoneFunction) {
         this.deadZoneFunction = deadZoneFunction;
     }
 
     /**
-     * Constructor that sets the dead zone min and max
+     * Constructor that sets the dead zone min and max <br>
+     * IMPORTANT: you MUST set the dead zone function before using this modifier
+     *
      * @param deadZoneMin the minimum value of the dead zone
      * @param deadZoneMax the maximum value of the dead zone
-     * @apiNote you MUST set the dead zone function before using this modifier
      */
     public DeadZoneModifier(T deadZoneMin, T deadZoneMax) {
         this.deadZoneMin = deadZoneMin;

@@ -5,6 +5,9 @@ import om.self.supplier.modifiers.LatchedModifier;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * A simple example of using the {@link LatchedModifier} in both rising and falling edge modes
+ */
 public class LatchedTest {
     public static void main(String[] args) {
         LatchedModifier rising = new LatchedModifier();

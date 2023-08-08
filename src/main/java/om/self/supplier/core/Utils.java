@@ -5,6 +5,13 @@ package om.self.supplier.core;
  */
 public class Utils {
 
+    /**
+     * Another version of {@link Utils#convertNumber(Number, Class)} that uses an actual object instead of a class
+     * @param number the number to be converted
+     * @param ref a number in the type you want the number to be converted to
+     * @return the converted number
+     * @param <T> the type to convert to
+     */
     public static<T> T convertNumber(Number number, T ref){
         return (T)convertNumber(number, ref.getClass());
     }
