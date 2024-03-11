@@ -12,13 +12,13 @@ import java.util.stream.DoubleStream;
  */
 public class DeadZoneTest {
     public static void main(String[] args) {
-        DeadZoneModifier<Double> d = new DeadZoneModifier<>(val -> 0.0, -1.0, 1.0);
+        DeadZoneModifier<Integer> d = new DeadZoneModifier<>(val -> 0, -1, 1);
 
-        PrimitiveIterator.OfDouble randoms = new Random().doubles(-2.0, 2.0).iterator();
+        PrimitiveIterator.OfInt randoms = new Random().ints(-5, 5).iterator();
 
         for (int i = 0; i < 100; i++) {
-            double val = randoms.next();
-            System.out.println(val + " -> " + d.apply(val));
+            int val = randoms.next();
+            System.out.printf("%2d -> %2d\n", val, d.apply(val));
         }
     }
 }
